@@ -21,7 +21,7 @@ body {
 }
 
 .tracks {
-  height: 365px;
+  height: 345px;
   overflow: scroll;
 }
 
@@ -75,7 +75,11 @@ body {
 
 .track-title {
   padding: 6px 10px;
-
+  width: 340px;
+  overflow: hidden;
+  white-space: nowrap;
+  text-overflow: ellipsis;
+  display: inline-block;
 }
 
 .track-title .user {
@@ -91,6 +95,16 @@ body {
 .player {
   height: 115px;
   background: linear-gradient(135deg, #fe8c00, #f83600);
+  padding: 5px 10px;
+}
+
+.player span {
+  color: white;
+  background-color: black;
+  padding: 5px 5px;
+  margin-top: 5px;
+  float: left;
+  clear: left;
 }
 
 .controls {

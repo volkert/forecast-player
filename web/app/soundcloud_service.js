@@ -23,10 +23,10 @@ angular.module('soundcloud-player')
       }
     };
 
-    this.favs = function () {
+    this.get = function (url) {
       if (SoundCloud.initialized) {
         var deferred = $q.defer();
-        SC.get('/users/me/favorites', function (response, error) {
+        SC.get(url, function (response, error) {
           if (response) {
             deferred.resolve(response);
           } else {

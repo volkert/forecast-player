@@ -20,8 +20,9 @@
   <div ng-if="SoundCloud.initialized">
     <div class="tracks">
       <div class="track"
-           ng-repeat="track in favs"
-           ng-class="{ 'track-odd': $odd, 'track-playing': $index === 3 }">
+           ng-repeat="track in Playlist.tracklist"
+           ng-class="{ 'track-odd': $odd, 'track-playing': $index === 3 }"
+           ng-click="Playlist.play($index)">
         <div class="track-details">
           <div class="track-artwork">
             <div class="track-artwork-overlay">
@@ -37,6 +38,10 @@
       </div>
     </div>
     <div class="player">
+      <div ng-if="Playlist.currentTrack">
+        <span>{{ Playlist.currentTrack.user.username }}</span>
+        <span>{{ Playlist.currentTrack.title }}</span>
+      </div>
     </div>
     <div class="controls">
       <div class="control-item">
@@ -57,5 +62,6 @@
 <script src="components/angular/angular.js"></script>
 <script src="app.js"></script>
 <script src="app/soundcloud_service.js"></script>
+<script src="app/playlist_service.js"></script>
 </body>
 </html>

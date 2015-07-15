@@ -1,12 +1,10 @@
 const ipc = require('ipc');
 
 angular.module('soundcloud-player', [])
-  .run(function ($rootScope, SoundCloud) {
+  .run(function ($rootScope, SoundCloud, Playlist) {
     $rootScope.SoundCloud = SoundCloud;
+    $rootScope.Playlist = Playlist;
 
-    SoundCloud.favs().then(function (favs) {
-      console.log(favs[0]);
-      $rootScope.favs = favs;
-    });
+    Playlist.loadFavourites();
   })
 ;
