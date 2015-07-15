@@ -1,0 +1,61 @@
+<!doctype html>
+<html>
+<head>
+  <meta charset="utf-8">
+  <title>SoundCloud Player</title>
+  <link rel="stylesheet" href="http://maxcdn.bootstrapcdn.com/font-awesome/4.3.0/css/font-awesome.min.css">
+  <link href='http://fonts.googleapis.com/css?family=Lato:300,400' rel='stylesheet' type='text/css'>
+  <link rel="stylesheet" href="style.css">
+  <script src="https://connect.soundcloud.com/sdk-2.0.0.js"></script>
+</head>
+<body ng-app="soundcloud-player" ng-cloak>
+<div class="container">
+  <div class="login"
+       ng-if="!SoundCloud.initialized">
+    <a ng-click="SoundCloud.login()">
+      <img ng-src="img/btn-connect-sc-l.png"/>
+    </a>
+  </div>
+
+  <div ng-if="SoundCloud.initialized">
+    <div class="tracks">
+      <div class="track"
+           ng-repeat="track in favs"
+           ng-class="{ 'track-odd': $odd, 'track-playing': $index === 3 }">
+        <div class="track-details">
+          <div class="track-artwork">
+            <div class="track-artwork-overlay">
+              <i class="fa fa-play"></i>
+            </div>
+            <img ng-src="{{ track.artwork_url }}" alt="">
+          </div>
+          <div class="track-title">
+            <span class="user">{{ track.user.username }}</span><br>
+            <span class="title">{{ track.title }}</span>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div class="player">
+    </div>
+    <div class="controls">
+      <div class="control-item">
+        <i class="fa fa-volume-up"></i>
+      </div>
+      <div class="control-item">
+        <i class="fa fa-step-backward"></i>
+        <i class="fa fa-play control-main"></i>
+        <!--<i class="fa fa-pause control-main"></i>-->
+        <i class="fa fa-step-forward"></i>
+      </div>
+      <div class="control-item">
+      </div>
+    </div>
+  </div>
+
+</div>
+<script src="components/angular/angular.js"></script>
+<script src="app.js"></script>
+<script src="app/soundcloud_service.js"></script>
+</body>
+</html>

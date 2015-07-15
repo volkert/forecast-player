@@ -1,0 +1,117 @@
+[ng\:cloak], [ng-cloak], [data-ng-cloak], [x-ng-cloak], .ng-cloak, .x-ng-cloak {
+  display: none !important;
+}
+
+html,
+body {
+  padding: 0;
+  margin: 0;
+  font-family: 'Lato', sans-serif;
+}
+
+.login {
+  height: 530px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.login a {
+  cursor: pointer;
+}
+
+.tracks {
+  height: 365px;
+  overflow: scroll;
+}
+
+.track-odd {
+  background-color: #F7F9FA;
+}
+
+.track img {
+  width: 55px;
+}
+
+.track-details {
+  display: flex;
+  height: 55px;
+  cursor: pointer;
+}
+
+/*.track-details:hover {*/
+  /*-webkit-box-shadow: inset 0px 0 1px 0px #f83600;*/
+/*}*/
+
+.track-artwork {
+  float: left;
+  position: relative;
+}
+
+.track-artwork-overlay {
+  background-color: #f83600;
+  bottom: 0;
+  display: block;
+  left: 0;
+  opacity: 0;
+  position: absolute;
+  right: 0;
+  top: 0;
+  z-index: 1;
+}
+
+.track-artwork-overlay i {
+
+  margin-top: 20px;
+  margin-left: 20px;
+  font-size: 24px;
+  color: white;
+  z-index: 1;
+}
+
+.track-playing .track-artwork img {
+  opacity: 0.5;
+}
+
+.track-title {
+  padding: 6px 10px;
+
+}
+
+.track-title .user {
+  font-weight: 100;
+  font-size: 13px;
+  color: #727a79;
+}
+
+.track-title .title {
+  font-size: 14px;
+}
+
+.player {
+  height: 115px;
+  background: linear-gradient(135deg, #fe8c00, #f83600);
+}
+
+.controls {
+  padding: 13px 30px;
+  display: flex;
+  justify-content: space-between;
+  color: grey;
+}
+
+.control-item {
+  font-size: 20px;
+  width: 110px;
+  display: flex;
+  justify-content: space-between;
+}
+
+.control-item .control-main {
+  font-size: 30px;
+  line-height: 20px;
+}
+
+.control-item i {
+  cursor: pointer;
+}

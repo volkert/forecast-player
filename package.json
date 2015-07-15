@@ -1,0 +1,35 @@
+{
+  "name": "soundcloud-player",
+  "productName": "SoundcloudPlayer",
+  "version": "0.0.0",
+  "description": "Soundcloud Player",
+  "license": "MIT",
+  "main": "main.js",
+  "repository": "volkert/soundcloud-player",
+  "author": {
+    "name": "Volker Tietz",
+    "email": "volker.tietz@xing.com",
+    "url": "github.com/volkert"
+  },
+  "engines": {
+    "node": ">=0.10.0"
+  },
+  "scripts": {
+    "start": "electron .",
+    "build": "electron-packager . $npm_package_productName --prune --asar --platform=darwin --arch=x64 --version=0.28.1"
+  },
+  "files": [
+    "src/",
+    "web/"
+  ],
+  "keywords": [
+    "electron-app"
+  ],
+  "dependencies": {
+    "electron-debug": "^0.1.0"
+  },
+  "devDependencies": {
+    "electron-packager": "^4.1.2",
+    "electron-prebuilt": "^0.28.1"
+  }
+}
