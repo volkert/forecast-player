@@ -4,6 +4,8 @@ angular.module('soundcloud-player')
         localStorage = $window.localStorage,
         SoundCloud   = this;
 
+    SoundCloud.oauthToken = null;
+
     ipc.on('index:save-token', function (token) {
       localStorage.setItem('soundcloud-token', token);
       $window.location.reload();
@@ -19,6 +21,9 @@ angular.module('soundcloud-player')
       var token = localStorage.getItem('soundcloud-token');
       if(token) {
         SC.initialize({ access_token: token });
+        SC._baseUrl = 'http://connect.soundcloud.com';
+
+        SoundCloud.oauthToken = token;
         SoundCloud.initialized = true;
       }
     };

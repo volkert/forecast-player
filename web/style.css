@@ -7,6 +7,8 @@ body {
   padding: 0;
   margin: 0;
   font-family: 'Lato', sans-serif;
+  max-width: 100%;
+  overflow-x: hidden;
 }
 
 .login {
@@ -105,6 +107,17 @@ body {
   margin-top: 5px;
   float: left;
   clear: left;
+}
+
+.player span.marquee {
+  animation: marquee 15s linear infinite;
+  overflow: hidden;
+  white-space: nowrap;
+}
+
+@keyframes marquee {
+  0%   { margin-left: -400px; }
+  100% { margin-left: 400px; }
 }
 
 .controls {

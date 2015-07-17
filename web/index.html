@@ -6,7 +6,7 @@
   <link rel="stylesheet" href="http://maxcdn.bootstrapcdn.com/font-awesome/4.3.0/css/font-awesome.min.css">
   <link href='http://fonts.googleapis.com/css?family=Lato:300,400' rel='stylesheet' type='text/css'>
   <link rel="stylesheet" href="style.css">
-  <script src="https://connect.soundcloud.com/sdk-2.0.0.js"></script>
+  <script src="http://connect.soundcloud.com/sdk.js"></script>
 </head>
 <body ng-app="soundcloud-player" ng-cloak>
 <div class="container">
@@ -40,8 +40,9 @@
     <div class="player">
       <div ng-if="Playlist.currentTrack">
         <span>{{ Playlist.currentTrack.user.username }}</span>
-        <span>{{ Playlist.currentTrack.title }}</span>
+        <span ng-class="{ 'marquee': Playlist.isPlaying }">{{ Playlist.currentTrack.title }}</span>
       </div>
+      <audio player></audio>
     </div>
     <div class="controls">
       <div class="control-item">
@@ -49,8 +50,8 @@
       </div>
       <div class="control-item">
         <i class="fa fa-step-backward"></i>
-        <i class="fa fa-play control-main"></i>
-        <!--<i class="fa fa-pause control-main"></i>-->
+        <i ng-if="!Playlist.isPlaying" ng-click="Playlist.unpause()" class="fa fa-play control-main"></i>
+        <i ng-if="Playlist.isPlaying" ng-click="Playlist.pause()" class="fa fa-pause control-main"></i>
         <i class="fa fa-step-forward"></i>
       </div>
       <div class="control-item">
@@ -63,5 +64,6 @@
 <script src="app.js"></script>
 <script src="app/soundcloud_service.js"></script>
 <script src="app/playlist_service.js"></script>
+<script src="app/player_directive.js"></script>
 </body>
 </html>
