@@ -15,6 +15,9 @@ angular.module('soundcloud-player', [])
 
   .filter('timeInMinutes', function () {
     return function (input) {
+      if (typeof input === 'undefined') {
+        input = 0;
+      }
       var time = Math.floor(input);
       var minutes = Math.floor(time / 60);
       var seconds = time % 60;
