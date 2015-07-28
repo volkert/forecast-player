@@ -38,28 +38,25 @@
       </div>
     </div>
     <div class="player">
-      <div ng-if="Playlist.currentTrack">
-        <span>{{ Playlist.currentTrack.user.username }}</span>
-        <span ng-class="{ 'marquee': Playlist.isPlaying }">{{ Playlist.currentTrack.title }}</span>
+      <div class="current-track">
+        <div ng-if="Playlist.currentTrack">
+          <span>{{ Playlist.currentTrack.user.username }}</span>
+          <span ng-class="{ 'marquee': Playlist.isPlaying }">{{ Playlist.currentTrack.title }}</span>
+        </div>
       </div>
       <audio player></audio>
-    </div>
-    <div class="controls">
-      <div class="control-item">
-        <i class="fa fa-volume-up"></i>
-      </div>
-      <div class="control-item">
-        <i class="fa fa-step-backward"></i>
-        <i ng-if="!Playlist.isPlaying" ng-click="Playlist.unpause()" class="fa fa-play control-main"></i>
-        <i ng-if="Playlist.isPlaying" ng-click="Playlist.pause()" class="fa fa-pause control-main"></i>
-        <i class="fa fa-step-forward"></i>
-      </div>
-      <div class="control-item">
+      <div class="controls-wrapper">
+        <div class="controls">
+          <i class="fa fa-step-backward"  ng-click="Playlist.previousTrack()"></i>
+          <i ng-if="!Playlist.isPlaying" ng-click="Playlist.playPause()" class="fa fa-play control-main"></i>
+          <i ng-if="Playlist.isPlaying" ng-click="Playlist.playPause()" class="fa fa-pause control-main"></i>
+          <i class="fa fa-step-forward" ng-click="Playlist.nextTrack()"></i>
+        </div>
       </div>
     </div>
   </div>
-
 </div>
+<script src="app/menu.js"></script>
 <script src="components/angular/angular.js"></script>
 <script src="app.js"></script>
 <script src="app/soundcloud_service.js"></script>

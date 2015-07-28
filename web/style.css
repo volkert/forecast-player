@@ -23,8 +23,7 @@ body {
 }
 
 .tracks {
-  height: 345px;
-  overflow: scroll;
+  margin-bottom: 200px;
 }
 
 .track-odd {
@@ -40,10 +39,6 @@ body {
   height: 55px;
   cursor: pointer;
 }
-
-/*.track-details:hover {*/
-  /*-webkit-box-shadow: inset 0px 0 1px 0px #f83600;*/
-/*}*/
 
 .track-artwork {
   float: left;
@@ -95,36 +90,42 @@ body {
 }
 
 .player {
-  height: 115px;
+  position: fixed;
+  bottom: 0px;
+  height: 200px;
+  width: 100%;
   background: linear-gradient(135deg, #fe8c00, #f83600);
-  padding: 5px 10px;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
 }
 
 .player span {
   color: white;
   background-color: black;
   padding: 5px 5px;
-  margin-top: 5px;
+  margin-top: 2px;
   float: left;
   clear: left;
 }
 
-.player span.marquee {
-  animation: marquee 15s linear infinite;
-  overflow: hidden;
-  white-space: nowrap;
+.current-track {
+  padding: 10px;
 }
 
-@keyframes marquee {
-  0%   { margin-left: -400px; }
-  100% { margin-left: 400px; }
+.controls-wrapper {
+  background-color: white;
+  padding: 10px 35%;
 }
 
 .controls {
-  padding: 13px 30px;
   display: flex;
   justify-content: space-between;
   color: grey;
+  width: 100%;
+  align-self: flex-end;
+  background-color: white;
+  font-size: 22px;
 }
 
 .control-item {
@@ -139,6 +140,6 @@ body {
   line-height: 20px;
 }
 
-.control-item i {
+.controls i {
   cursor: pointer;
 }

@@ -38,11 +38,11 @@ angular.module('soundcloud-player')
     };
 
     this.nextTrack = function () {
-
+      Playlist.play(Playlist.currentTrackIndex + 1);
     };
 
     this.previousTrack = function () {
-
+      Playlist.play(Playlist.currentTrackIndex - 1);
     };
 
     this.play = function (trackIndex) {
@@ -50,17 +50,36 @@ angular.module('soundcloud-player')
       Playlist.currentTrackIndex = trackIndex;
 
       Playlist.isPlaying = true;
+      console.log('trackIndex', trackIndex);
       $rootScope.$broadcast('player:play', Playlist.currentTrack.stream());
     };
 
-    this.pause = function () {
-      Playlist.isPlaying = false;
-      $rootScope.$broadcast('player:pause');
+    this.playPause = function () {
+      if(Playlist.currentTrack) {
+        if(Playlist.isPlaying) {
+          $rootScope.$broadcast('player:pause');
+        } else {
+          $rootScope.$broadcast('player:unpause');
+        }
+        Playlist.isPlaying = !Playlist.isPlaying;
+      } else {
+        Playlist.play(0);
+      }
     };
-    
-    this.unpause = function () {
-      Playlist.isPlaying = true;
-      $rootScope.$broadcast('player:unpause');
-    }
+
+    ipc.on('MediaPlayPause', function () {
+      Playlist.playPause();
+      $rootScope.$apply();
+    });
+
+    ipc.on('MediaNextTrack', function () {
+      Playlist.nextTrack();
+      $rootScope.$apply();
+    });
+
+    ipc.on('MediaPreviousTrack', function () {
+      Playlist.previousTrack();
+      $rootScope.$apply();
+    });
   })
 ;

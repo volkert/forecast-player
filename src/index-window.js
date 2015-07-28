@@ -12,7 +12,7 @@ module.exports = {
   callback: function (request) {
     var callbackUrl = url.parse(request.url),
         token       = callbackUrl.hash.split('&')[0].split('=')[1];
-    
+
     indexWindow.webContents.send('index:save-token', token);
     loginWindow.close();
   },
@@ -35,5 +35,12 @@ module.exports = {
     indexWindow = win;
 
     return win;
+  },
+  send:     function (event, payload) {
+    if (indexWindow) {
+      indexWindow.webContents.send(event, payload);
+    } else {
+      console.error('no indexWindow to send message to');
+    }
   }
 };

@@ -16,7 +16,7 @@
   },
   "scripts": {
     "start": "electron .",
-    "build": "electron-packager . $npm_package_productName --prune --asar --platform=darwin --arch=x64 --version=0.28.1"
+    "build": "electron-packager . SoundCloudPlayer --asar --platform=darwin --arch=x64 --version=0.28.1"
   },
   "files": [
     "src/",
