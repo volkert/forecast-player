@@ -155,12 +155,12 @@ div[waveform] {
 }
 
 .track-duration {
-  padding: 0px 5px;
+  padding: 0 5px;
 }
 
 .track-duration span {
   background-color: black;
-  color: white;
+  color: #fe8c00;
   padding: 3px;
   font-size: 12px;
 }
