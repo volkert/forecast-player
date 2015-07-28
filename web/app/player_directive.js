@@ -3,22 +3,26 @@ angular.module('soundcloud-player')
     return {
       restrict: 'A',
       link:     function (scope, elm) {
-        var audio = elm[0],
+        var audio = elm.find('audio'),
             pauseTime = null;
-
-        scope.$on('player:play', function ($event, source) {
-          elm.attr('src', source);
-          audio.play();
+        
+        audio[0].addEventListener('timeupdate', function () {
+          console.log(audio[0].currentTime);
+        });
+        
+        scope.$on('player:play', function ($event, track) {
+          audio.attr('src', track.stream());
+          audio[0].play();
         });
 
         scope.$on('player:pause', function () {
           pauseTime = audio.currentTime;
-          audio.pause();
+          audio[0].pause();
         });
 
         scope.$on('player:unpause', function () {
           audio.currentTime = pauseTime;
-          audio.play();
+          audio[0].play();
         });
       }
     }

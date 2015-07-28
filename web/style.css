@@ -100,7 +100,7 @@ body {
   justify-content: space-between;
 }
 
-.player span {
+.player span.current-track-title {
   color: white;
   background-color: black;
   padding: 5px 5px;
@@ -142,4 +142,8 @@ body {
 
 .controls i {
   cursor: pointer;
+}
+
+div[waveform] {
+  padding: 10px;
 }

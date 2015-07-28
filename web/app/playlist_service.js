@@ -50,8 +50,7 @@ angular.module('soundcloud-player')
       Playlist.currentTrackIndex = trackIndex;
 
       Playlist.isPlaying = true;
-      console.log('trackIndex', trackIndex);
-      $rootScope.$broadcast('player:play', Playlist.currentTrack.stream());
+      $rootScope.$broadcast('player:play', Playlist.currentTrack);
     };
 
     this.playPause = function () {

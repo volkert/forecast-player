@@ -7,6 +7,7 @@
   <link href='http://fonts.googleapis.com/css?family=Lato:300,400' rel='stylesheet' type='text/css'>
   <link rel="stylesheet" href="style.css">
   <script src="http://connect.soundcloud.com/sdk.js"></script>
+  <script src="http://www.waveformjs.org/waveform.js"></script>
 </head>
 <body ng-app="soundcloud-player" ng-cloak>
 <div class="container">
@@ -37,14 +38,15 @@
         </div>
       </div>
     </div>
-    <div class="player">
+    <div class="player" player>
       <div class="current-track">
         <div ng-if="Playlist.currentTrack">
-          <span>{{ Playlist.currentTrack.user.username }}</span>
-          <span ng-class="{ 'marquee': Playlist.isPlaying }">{{ Playlist.currentTrack.title }}</span>
+          <span class="current-track-title">{{ Playlist.currentTrack.user.username }}</span>
+          <span class="current-track-title">{{ Playlist.currentTrack.title }}</span>
         </div>
       </div>
-      <audio player></audio>
+      <div waveform track="Playlist.currentTrack"></div>
+      <audio></audio>
       <div class="controls-wrapper">
         <div class="controls">
           <i class="fa fa-step-backward"  ng-click="Playlist.previousTrack()"></i>
@@ -62,5 +64,6 @@
 <script src="app/soundcloud_service.js"></script>
 <script src="app/playlist_service.js"></script>
 <script src="app/player_directive.js"></script>
+<script src="app/waveform_directive.js"></script>
 </body>
 </html>
