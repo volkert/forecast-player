@@ -5,7 +5,6 @@ angular.module('soundcloud-player')
       link:     function (scope, elm) {
         var waveform = new Waveform({
           container:   elm[0],
-          innerColor:  '#fff',
           height:      40,
           width:       380,
           interpolate: true

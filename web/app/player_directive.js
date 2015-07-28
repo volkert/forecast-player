@@ -1,18 +1,21 @@
 angular.module('soundcloud-player')
-  .directive('player', function () {
+  .directive('player', function ($interval) {
     return {
       restrict: 'A',
       link:     function (scope, elm) {
         var audio = elm.find('audio'),
+            timeInterval = null,
             pauseTime = null;
         
-        audio[0].addEventListener('timeupdate', function () {
-          console.log(audio[0].currentTime);
-        });
-        
         scope.$on('player:play', function ($event, track) {
+          $interval.cancel(timeInterval);
+
           audio.attr('src', track.stream());
           audio[0].play();
+
+          timeInterval = $interval(function () {
+            scope.timeElapsed = audio[0].currentTime;
+          }, 1000);
         });
 
         scope.$on('player:pause', function () {

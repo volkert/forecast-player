@@ -12,6 +12,12 @@ angular.module('soundcloud-player')
       stream() {
         return `${this.stream_url}?oauth_token=${SoundCloud.oauthToken}`
       }
+
+      durationInMinutes() {
+        var minutes = Math.floor(this.duration / 60000);
+        var seconds = ((this.duration % 60000) / 1000).toFixed(0);
+        return minutes + ":" + (seconds < 10 ? '0' : '') + seconds;
+      }
     }
 
     var Playlist = this;
@@ -54,8 +60,8 @@ angular.module('soundcloud-player')
     };
 
     this.playPause = function () {
-      if(Playlist.currentTrack) {
-        if(Playlist.isPlaying) {
+      if (Playlist.currentTrack) {
+        if (Playlist.isPlaying) {
           $rootScope.$broadcast('player:pause');
         } else {
           $rootScope.$broadcast('player:unpause');

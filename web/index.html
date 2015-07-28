@@ -46,6 +46,10 @@
         </div>
       </div>
       <div waveform track="Playlist.currentTrack"></div>
+      <div ng-if="Playlist.currentTrack" class="track-duration">
+        <span class="time-elapsed">{{ timeElapsed | timeInMinutes }}</span>
+        <span class="time-total">{{ Playlist.currentTrack.durationInMinutes() }}</span>
+      </div>
       <audio></audio>
       <div class="controls-wrapper">
         <div class="controls">
