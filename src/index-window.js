@@ -19,14 +19,14 @@ module.exports = {
   open:     function () {
     var win = new BrowserWindow({
       width:     400,
-      height:    550,
+      height:    600,
       y:         200,
       x:         200,
       resizable: false
     });
 
     win.loadUrl('file://' + __dirname + '/../web/index.html');
-    win.openDevTools({ detached: true });
+    //win.openDevTools({ detached: true });
 
     ipc.on('index:open-login', function () {
       loginWindow = LoginWindow();

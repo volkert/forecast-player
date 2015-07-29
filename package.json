@@ -15,8 +15,7 @@
     "node": ">=0.10.0"
   },
   "scripts": {
-    "start": "electron .",
-    "build": "electron-packager . SoundCloudPlayer --asar --platform=darwin --arch=x64 --version=0.28.1"
+    "start": "electron ."
   },
   "files": [
     "src/",

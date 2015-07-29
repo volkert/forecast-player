@@ -1,12 +1,16 @@
-# soundcloud-player
+# Desktop client for SoundCloud
 
-> My awesome app
+Desktop client for SounCloud with support for global media hotkeys. This started as an experiment with [electron](http://electron.atom.io/).
 
+Currently only displays your favourite tracks!
 
-## Dev
+![SoundCloud Player](assets/soundcloud_player.png)
+
+## Install dependencies
 
 ```
 $ npm install
+$ bower install
 ```
 
 ### Run
@@ -18,10 +22,9 @@ $ npm start
 ### Build
 
 ```
-$ npm run build
+$ make
 ```
-
 
 ## License
 
-MIT © [Volker Tietz](http://github.com/volekrt)
+MIT © [Volker Tietz](http://github.com/volkert)
