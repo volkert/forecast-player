@@ -10,7 +10,7 @@ Developed, tested and built for OSX only (for now).
 
 # Download latest version for OSX
 
-[SoundCloudPlayer-0.0.1-beta.zip](https://github.com/volkert/soundcloud-player/releases/download/0.0.1-beta/SoundCloudPlayer-0.0.1-beta.zip)
+[ForecastPlayer-0.0.2-beta.zip](https://github.com/volkert/forecast-player/releases/download/0.0.2-beta/ForecastPlayer-0.0.2-beta.zip)
 
 ### Contribute
 
