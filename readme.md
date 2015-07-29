@@ -1,6 +1,6 @@
-# Desktop client for SoundCloud
+# Forecast Player
 
-Desktop client for SounCloud with support for global media hotkeys. This started as an experiment with [electron](http://electron.atom.io/).
+Desktop client for SoundCloud with support for global media hotkeys. This started as an experiment with [electron](http://electron.atom.io/).
 
 Currently only displays your favourite tracks!
 
