@@ -1,14 +1,14 @@
 {
   "name": "soundcloud-player",
   "productName": "SoundcloudPlayer",
-  "version": "0.0.0",
+  "version": "0.0.1",
   "description": "Soundcloud Player",
   "license": "MIT",
   "main": "main.js",
   "repository": "volkert/soundcloud-player",
   "author": {
     "name": "Volker Tietz",
-    "email": "volker.tietz@xing.com",
+    "email": "volker.tietz@gmail.com",
     "url": "github.com/volkert"
   },
   "engines": {
