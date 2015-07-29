@@ -6,7 +6,7 @@ Currently only displays your favourite tracks!
 
 Developed, tested and built for OSX only (for now).
 
-![SoundCloud Player](assets/soundcloud_player.png)
+![SoundCloud Player](assets/forecast-player.png)
 
 # Download latest version for OSX
 
