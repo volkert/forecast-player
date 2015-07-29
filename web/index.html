@@ -19,7 +19,14 @@
   </div>
 
   <div ng-if="SoundCloud.initialized">
-    <div class="tracks">
+    <header>
+      <i class="fa fa-bars"></i>
+      <div class="search">
+        <input type="search" placeholder="Search for artist/title">
+      </div>
+      <i class="fa fa-search"></i>
+    </header>
+    <div class="tracks" ng-class="{ 'with-player': Playlist.currentTrack }">
       <div class="track"
            ng-repeat="track in Playlist.tracklist"
            ng-class="{ 'track-odd': $odd, 'track-playing': $index === 3 }"
@@ -38,9 +45,9 @@
         </div>
       </div>
     </div>
-    <div class="player" player>
+    <div class="player" player ng-if="Playlist.currentTrack">
       <div class="current-track">
-        <div ng-if="Playlist.currentTrack">
+        <div>
           <span class="current-track-title">{{ Playlist.currentTrack.user.username }}</span>
           <span class="current-track-title">{{ Playlist.currentTrack.title }}</span>
         </div>

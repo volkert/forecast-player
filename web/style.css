@@ -22,7 +22,38 @@ body {
   cursor: pointer;
 }
 
+header {
+  position: fixed;
+  height: 45px;
+  z-index: 2;
+  top: 0;
+  background-color: #333;
+  color: white;
+  line-height: 45px;
+  width: 380px;
+  padding: 0 10px;
+  font-size: 20px;
+  display: flex;
+  align-items: center;
+}
+
+.search {
+  width: 100%;
+  display: flex;
+  justify-content: flex-end;
+  margin-right: 5px;
+}
+
+.search input {
+  font-size: 20px;
+  width: 180px;
+}
+
 .tracks {
+  margin-top: 46px;
+}
+
+.tracks.with-player {
   margin-bottom: 200px;
 }
 
