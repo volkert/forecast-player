@@ -5,17 +5,17 @@ var
 (function buildMenu() {
   var template = [
     {
-      label:   'SoundCloud Player',
+      label:   'Forecast Player',
       submenu: [
         {
-          label:    'About SoundCloud Player',
+          label:    'About Forecast Player',
           selector: 'orderFrontStandardAboutPanel:'
         },
         {
           type: 'separator'
         },
         {
-          label:       'Hide Electron',
+          label:       'Hide Forecast Player',
           accelerator: 'Command+H',
           selector:    'hide:'
         },

@@ -26,7 +26,7 @@ app.on('ready', function () {
 
   openIndexWindow();
 
-  protocol.registerProtocol('soundcloud-player', IndexWindow.callback);
+  protocol.registerProtocol('forecast-player', IndexWindow.callback);
 
   ['MediaPlayPause', 'MediaNextTrack', 'MediaPreviousTrack'].forEach(function (shortcut) {
     globalShortcut.register(shortcut, function () {

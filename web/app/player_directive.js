@@ -1,4 +1,4 @@
-angular.module('soundcloud-player')
+angular.module('forecast-player')
   .directive('player', function ($interval) {
     return {
       restrict:      'A',

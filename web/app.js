@@ -1,6 +1,6 @@
 const ipc = require('ipc');
 
-angular.module('soundcloud-player', [])
+angular.module('forecast-player', [])
   .config(function ($sceDelegateProvider) {
     $sceDelegateProvider.resourceUrlWhitelist([
       'https://api.soundcloud.com/**'

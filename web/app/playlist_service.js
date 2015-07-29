@@ -1,4 +1,4 @@
-angular.module('soundcloud-player')
+angular.module('forecast-player')
   .service('Playlist', function ($window, $rootScope, SoundCloud) {
     'use strict';
 

@@ -2,14 +2,14 @@
 <html>
 <head>
   <meta charset="utf-8">
-  <title>SoundCloud Player</title>
+  <title>Forecast Player</title>
   <link rel="stylesheet" href="http://maxcdn.bootstrapcdn.com/font-awesome/4.3.0/css/font-awesome.min.css">
   <link href='http://fonts.googleapis.com/css?family=Lato:300,400' rel='stylesheet' type='text/css'>
   <link rel="stylesheet" href="style.css">
   <script src="http://connect.soundcloud.com/sdk.js"></script>
   <script src="http://www.waveformjs.org/waveform.js"></script>
 </head>
-<body ng-app="soundcloud-player" ng-cloak>
+<body ng-app="forecast-player" ng-cloak>
 <div class="container">
   <div class="login"
        ng-if="!SoundCloud.initialized">
@@ -53,7 +53,7 @@
       <audio></audio>
       <div class="controls-wrapper">
         <div class="controls">
-          <i class="fa fa-step-backward"  ng-click="Playlist.previousTrack()"></i>
+          <i class="fa fa-step-backward" ng-click="Playlist.previousTrack()"></i>
           <i ng-if="!Playlist.isPlaying" ng-click="Playlist.playPause()" class="fa fa-play control-main"></i>
           <i ng-if="Playlist.isPlaying" ng-click="Playlist.playPause()" class="fa fa-pause control-main"></i>
           <i class="fa fa-step-forward" ng-click="Playlist.nextTrack()"></i>

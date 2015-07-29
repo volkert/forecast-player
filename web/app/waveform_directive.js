@@ -1,4 +1,4 @@
-angular.module('soundcloud-player')
+angular.module('forecast-player')
   .directive('waveform', function () {
     return {
       restrict: 'A',
@@ -20,8 +20,8 @@ angular.module('soundcloud-player')
 
         ctx = waveform.context;
         gradient = ctx.createLinearGradient(0, 0, 0, waveform.height);
-        gradient.addColorStop(0.0, "#ECE9E6");
-        gradient.addColorStop(1.0, "#fff");
+        gradient.addColorStop(0.0, "#136a8a");
+        gradient.addColorStop(1.0, "#267871");
         waveform.innerColor = gradient;
 
         scope.$watch('Playlist.currentTrack', repaint);
@@ -47,11 +47,8 @@ angular.module('soundcloud-player')
             waveform.update({ data: waveform.data });
 
             ctx.globalAlpha = 0.3;
-            gradient = ctx.createLinearGradient(0, 0, waveform.height, width * percent);
-            gradient.addColorStop(0.0, "#fe8c00");
-            gradient.addColorStop(1.0, "#f83600");
 
-            ctx.fillStyle = gradient;
+            ctx.fillStyle = '#fff';
             ctx.fillRect(0, 0, width * percent, waveform.height);
             ctx.globalAlpha = 1.0;
           }

@@ -1,11 +1,11 @@
 {
-  "name": "soundcloud-player",
-  "productName": "SoundcloudPlayer",
+  "name": "forecast-player",
+  "productName": "ForecastPlayer",
   "version": "0.0.1",
-  "description": "Soundcloud Player",
+  "description": "Forecast Player for SoundCloud",
   "license": "MIT",
   "main": "main.js",
-  "repository": "volkert/soundcloud-player",
+  "repository": "volkert/forecast-player",
   "author": {
     "name": "Volker Tietz",
     "email": "volker.tietz@gmail.com",
@@ -15,14 +15,13 @@
     "node": ">=0.10.0"
   },
   "scripts": {
-    "start": "electron ."
-  },
+    "start": "electron ."  },
   "files": [
     "src/",
     "web/"
   ],
   "keywords": [
-    "electron-app"
+    "electron-app soundcloud forecast"
   ],
   "dependencies": {
     "electron-debug": "^0.1.0"

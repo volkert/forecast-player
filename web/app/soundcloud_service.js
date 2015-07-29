@@ -1,4 +1,4 @@
-angular.module('soundcloud-player')
+angular.module('forecast-player')
   .service('SoundCloud', function ($window, $q) {
     var SC           = $window.SC,
         localStorage = $window.localStorage,
